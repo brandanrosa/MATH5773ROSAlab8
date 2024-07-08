@@ -18,5 +18,5 @@ a ggplot and named list of confidence intervals
 A function which produces a ggplot and a list of confidence intervals for the rebased data
 }
 \examples{
-\dontrun{gginterval(epoxy, alpha = 0.05)}
+{gginterval(epoxy, alpha = 0.05)}
 }

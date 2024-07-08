@@ -2,11 +2,12 @@
 
 export(gginterval)
 export(myrebase)
+export(shinyepoxy)
 importFrom(ggplot2,aes)
 importFrom(ggplot2,geom_boxplot)
 importFrom(ggplot2,geom_point)
 importFrom(ggplot2,ggplot)
-importFrom(magrittr,"%>%")
+importFrom(shiny,runApp)
 importFrom(stats,coef)
 importFrom(stats,confint)
 importFrom(stats,lm)

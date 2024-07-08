@@ -10,21 +10,19 @@
 #'
 #' @importFrom ggplot2 ggplot geom_boxplot geom_point aes
 #' @importFrom stats coef confint lm
-#' @importFrom magrittr %>%
 #'
-#' @examples \dontrun{gginterval(epoxy, alpha = 0.05)}
+#' @examples {gginterval(epoxy, alpha = 0.05)}
 gginterval <- function(df, alpha = 0.05) {
 
-  EXPTIME <- c()
+  `EXP-TIME` <- c()
   CORRATE <- c()
 
-  dflm <- lm(CORRATE ~ SYSTEM + EXPTIME, data = df)
+  dflm <- lm(CORRATE ~ SYSTEM + `EXP-TIME`, data = df)
   beta <- as.matrix(coef(dflm))
   dfci <- confint(dflm, level = 1-alpha)
 
-  df %>%
-    ggplot(aes(x = EXPTIME, y = CORRATE, fill = EXPTIME)) +
+  p <- ggplot(df, aes(x = `EXP-TIME`, y = CORRATE, fill = `EXP-TIME`)) +
     geom_boxplot() + geom_point()
 
-  list(beta_estimates=beta, Conf_Ints=dfci)
+  list(beta_estimates=beta, Conf_Ints=dfci, plot=p)
 }

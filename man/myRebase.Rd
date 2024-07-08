@@ -11,7 +11,7 @@ myrebase(df, SYSTEM_base, EXP_base)
 
 \item{SYSTEM_base}{rebase level for `SYSTEM` variable}
 
-\item{EXP_base}{rebase level for `EXPTIME` variable}
+\item{EXP_base}{rebase level for ``EXP-TIME`` variable}
 }
 \value{
 a rebased data frame
@@ -20,5 +20,5 @@ a rebased data frame
 A fuction which will rebase the levels of the varibles of the `EPOXY` data set
 }
 \examples{
-\dontrun{myrebase(epoxy, 2, 60)}
+{myrebase(epoxy, 2, 60)}
 }
